@@ -42,4 +42,4 @@ As a current (or potential) basketball fan, I want to be able to see details on 
 
 
 ## RESOURCES:
-*[API](https://www.balldontlie.io)
+*[balldontlie API](https://www.balldontlie.io)
