@@ -26,16 +26,16 @@ As a current (or potential) basketball fan, I want to be able to see details on 
 
 
 ## MVP:
-Display information about players/teams that the user can search through.
-Allow users to 'favorite' players to save to their profile for quick access to their details page
-Allow users to add comments to their profile's favorite players
+* Display information about players/teams that the user can search through.
+* Allow users to 'favorite' players to save to their profile for quick access to their details page
+* Allow users to add comments to their profile's favorite players
 
 ---
 
 
 ## STRETCH GOALS:
-Include images for teams (array of 30 images)
-Images for players (lots of players -- may have to find an api with existing images)
-Include player stats (unsure if this is something that needs to be decided on now or can be implemented later)
+* Include images for teams (array of 30 images)
+* Images for players (lots of players -- may have to find an api with existing images)
+* Include player stats (unsure if this is something that needs to be decided on now or can be implemented later)
 
 ---
