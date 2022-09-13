@@ -4,3 +4,33 @@ email: VARCHAR 255 (string)
 password: VARCHAR 255 (string)
 
 sequelize model:create --name user --attributes email:string,password:string
+
+
+
+PLAYER MODEL
+-----------------
+first_name: STRING
+last_name: STRING
+position: STRING
+height_feet: INT
+height_inches: INT
+team_id: INT
+
+
+
+TEAM MODEL
+--------------
+city: STRING
+conference: STRING 
+division: STRING
+name: STRING
+full_name: STRING
+abbreviation: STRING
+player_id: INT
+
+
+PLAYERS_TEAMS MODEL
+-----------------------
+player_id: INT
+team_id: INT
+

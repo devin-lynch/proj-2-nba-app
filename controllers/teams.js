@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
-// GET teams
+// GET all teams
 router.get('/', async (req, res) => {
     try {
         let teamsUrl = 'https://www.balldontlie.io/api/v1/teams'
@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
     }
 })
 
+// GET a specific team
 router.get('/:id', async (req, res) => {
     try {
         let teamUrl = `https://www.balldontlie.io/api/v1/teams/${req.params.id}`
