@@ -1,5 +1,5 @@
 # NBA APP
-I will be creating an NBA app. Users will have unique logins with authorization processes in place for security. Users will be able to search for players/teams and save favorite players to their account. Find details about players and teams to learn more about the game of basketball within the NBA API!
+I will be creating an NBA app. Users will have unique logins with authorization processes in place for security. Users will be able to search for players/teams and save favorite players to their account. Add comments to your favorite players (perhaps you'd like to predict a potential MVP or breakout player). Find details about players and teams to learn more about the game of basketball within the NBA API!
 
 ---
 
@@ -20,7 +20,7 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 
 
 ## USER STORY:
-As a current (or potential) basketball fan, I want to be able to see details on players/teams to help understand the landscape of the game of basketball
+As a current (or potential) basketball fan, I want to be able to see details on players/teams to help understand the landscape of the game of basketball.
 
 ---
 
@@ -39,3 +39,7 @@ As a current (or potential) basketball fan, I want to be able to see details on 
 * Include player stats (unsure if this is something that needs to be decided on now or can be implemented later)
 
 ---
+
+
+## RESOURCES:
+*[API](https://www.balldontlie.io)
