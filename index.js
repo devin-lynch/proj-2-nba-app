@@ -59,9 +59,9 @@ app.get('/', async (req, res) => {
         let nbaUrl = 'https://www.balldontlie.io/api/v1/players'
         axios.get(nbaUrl).then(apiResponse => {
             let nba = apiResponse.data;
-            console.log(nba)
-            // res.json(nba)
-            res.render('home.ejs')
+            // console.log(nba)
+            res.json(nba)
+            // res.render('home.ejs')
         })
     } catch(err) {
         console.warn(err)
