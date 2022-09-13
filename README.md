@@ -41,7 +41,15 @@ As a current (or potential) basketball fan, I want to be able to see details on 
 
 
 ## ERD
-<img src="img/ERD.png">
+![ERD]<img src="img/ERD.png">
+
+---
+
+
+## RESTFUL ROUTES
+![ROUTES]<img src="img/restfulroutes.png">
+
+---
 
 
 ## RESOURCES:
