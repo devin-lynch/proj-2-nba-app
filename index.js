@@ -56,12 +56,12 @@ app.use(async (req, res, next) => {
 
 app.get('/', async (req, res) => {
     try {
-        let nbaUrl = 'https://www.balldontlie.io/api/v1/players'
-        axios.get(nbaUrl).then(apiResponse => {
-            let nba = apiResponse.data;
-            // console.log(nba)
-            res.json(nba)
-            // res.render('home.ejs')
+        let playerUrl = 'https://www.balldontlie.io/api/v1/players'
+        axios.get(playerUrl).then(apiResponse => {
+            let players = apiResponse.data;
+            console.log(players)
+            // res.json(players)
+            res.render('home.ejs')
         })
     } catch(err) {
         console.warn(err)

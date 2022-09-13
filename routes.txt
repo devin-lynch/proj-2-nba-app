@@ -1,0 +1,13 @@
+VERB ________|_________URL PATTERN_____________________|____ACTION (CRUD) ___|_______DESCRIPTION______________
+---------------------------------------------------------------------------------------------------------------
+GET             /players                                READ                    List all players
+GET             /players/:id                            READ                    List a specific players
+GET             /teams                                  READ                    List all teams
+GET             /teams/:id                              READ                    List a specific teams
+GET             /users/profile                          READ                    Show user profile information
+GET             /users/profile/players                  READ                    List favorite players on a users profile
+POST            /users/profile/players                  CREATE                  Add a favorite player to the user profile
+POST            /users/profile/players/:id              CREATE                  Add a comment to a favorite player on your profile
+PUT             /users/profile/players/:id              UPDATE                  Update a comment for a favorite player on your profile
+DELETE          /users/profile/players/:id              DESTROY                 Deletes a favorite player from the user profile
+DELETE          /users/profile/comments/:id             DESTROY                 Deletes a specific comment by id
