@@ -11,8 +11,7 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 * Sequelize
 * EJS
 * Express-EJS-Layouts
-* Postgres
-* SQL
+* PostgreSQL
 * HTML
 * CSS
 
@@ -41,5 +40,9 @@ As a current (or potential) basketball fan, I want to be able to see details on 
 ---
 
 
+## ERD
+<img src="img/ERD.png">
+
+
 ## RESOURCES:
-*[balldontlie API](https://www.balldontlie.io)
+* [balldontlie API](https://www.balldontlie.io)

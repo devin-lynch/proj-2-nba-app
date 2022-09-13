@@ -34,3 +34,11 @@ PLAYERS_TEAMS MODEL
 player_id: INT
 team_id: INT
 
+
+COMMENTS MODEL
+-------------------
+description: STRING
+user_id: INT
+player_id: INT
+
+
