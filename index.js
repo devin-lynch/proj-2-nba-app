@@ -2,9 +2,11 @@
 require('dotenv').config()
 const express = require('express')
 const ejsLayouts = require('express-ejs-layouts')
+const axios = require('axios')
 const cookieParser = require('cookie-parser')
 const db = require('./models')
 const crypto = require('crypto-js')
+
 
 console.log('server secret:', process.env.ENC_SECRET)
 
@@ -38,13 +40,35 @@ app.use(async (req, res, next) => {
 
 
 
-// route definitions
-app.get('/', (req, res) => {
-    // console.log('incoming cookie 🍪', req.cookies)
-    // console.log(res.locals.myData)
-    console.log(`the currently logged in user is:`, res.locals.user)
-    res.render('home.ejs')
+// // route definitions
+// // put fetch request for API here
+// app.get('/', (req, res) => {
+//     let nbaUrl = 'https://www.balldontlie.io/api/v1/'
+//     axios.get(nbaUrl).then(apiResponse => {
+//         let nba = apiResponse.data.results;
+//         console.log(nba)
+//         res.render('home.ejs')
+//     })
+//     // console.log('incoming cookie 🍪', req.cookies)
+//     // console.log(res.locals.myData)
+//     console.log(`the currently logged in user is:`, res.locals.user)
+// })
+
+app.get('/', async (req, res) => {
+    try {
+        let nbaUrl = 'https://www.balldontlie.io/api/v1/players'
+        axios.get(nbaUrl).then(apiResponse => {
+            let nba = apiResponse.data;
+            console.log(nba)
+            // res.json(nba)
+            res.render('home.ejs')
+        })
+    } catch(err) {
+        console.warn(err)
+    }
 })
+
+
 
 // Controllers
 app.use('/users', require('./controllers/users'))
