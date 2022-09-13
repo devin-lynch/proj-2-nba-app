@@ -1,4 +1,21 @@
 <h2><% player.first_name %> <%= player.last_name %> Details!</h2>
 
-<p>Position</p>
-<p>Height: <%= player.height_feet %>'<%= height_inches %>''</p>
+<ul>
+    <li>
+        <p>Position: <%= player.position %></p>
+    </li>
+
+    <li>
+        <p>Height: <%= player.height_feet %>'<%= height_inches %>''</p>
+    </li>
+
+    <li>
+        <p>Team: <%= team.name %></p>
+    </li>
+    
+    <li>
+        <p>Division: <%= team.division %></p>
+    </li>
+</ul>
+
+
