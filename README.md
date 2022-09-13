@@ -3,6 +3,7 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 
 ---
 
+
 ## TECHSTACK:
 * JavaScript
 * Node
@@ -19,7 +20,10 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 
 
 ## USER STORY:
-As a current (or potential) basketball fan, I want to be able to see details on players/teams to help understand the landscape of the game of basketball.
+As a user, I want to be able to see details on players/teams to help understand the NBA.
+As a user, I want to create favorite players to post to my profile.
+As a user, I want to create comments to post on my profile's favorite players.
+As a user, I want to edit/delete comments from my favorite players on my profile.
 
 ---
 
@@ -41,13 +45,13 @@ As a current (or potential) basketball fan, I want to be able to see details on 
 
 
 ## ERD
-![ERD]<img src="media/ERD.png">
+<img src="media/ERD.png">
 
 ---
 
 
 ## RESTFUL ROUTES
-![ROUTES]<img src="media/restfulroutes.png">
+<img src="media/restfulroutes.png">
 
 ---
 
