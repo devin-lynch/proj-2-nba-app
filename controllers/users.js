@@ -108,4 +108,13 @@ router.get('/profile', (req, res) => {
     }
 })
 
+router.get('/profile/favorites', (req, res) => {
+    try {
+        res.render('users/favorites.ejs')
+    } catch(err) {
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
+
 module.exports = router
