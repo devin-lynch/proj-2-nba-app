@@ -5,14 +5,20 @@
         <p>Position: <%= player.position %></p>
     </li>
 
+<% if (player.height_feet != null && player.height_inches != null) { %>
     <li>
-        <p>Height: <%=// player.height_feet %>'<%=// height_inches %>''</p>
+        <p>Height: <%= player.height_feet %>'<%= player.height_inches %>''</p>
     </li>
+<% } %>
 
     <li>
-        <p>Team: <%= player.team.name %></p>
+        <p>Team: <%= player.team.full_name %></p>
     </li>
     
+    <li>
+        <p>Conference: <%= player.team.conference %></p>
+    </li>
+
     <li>
         <p>Division: <%= player.team.division %></p>
     </li>
