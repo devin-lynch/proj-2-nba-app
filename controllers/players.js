@@ -4,20 +4,32 @@ const router = express.Router()
 const db = require('../models')
 
 // GET players
+// router.get('/', async (req, res) => {
+//     try {
+//         const players = await db.player.findAll({})
+//             res.render('players/index.ejs', { players: players } )
+//         } catch(err) {
+//         console.warn(err)
+//         res.send(`Server Error!`)
+//     }
+// })
+
 router.get('/', async (req, res) => {
     try {
-        let playersUrl = 'https://www.balldontlie.io/api/v1/players'
-        axios.get(playersUrl)
-            .then(apiResponse => {
-                let players = apiResponse.data;
-                console.log(players)
-                res.json(players)
-        })
-    } catch(err) {
+        let players = `https://www.balldontlie.io/api/v1/players`
+        axios.get(players)
+            .then(response => {
+                let allPlayers = response.data
+                console.log(allPlayers)
+                res.json(allPlayers)
+            })
+        } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
     }
 })
+
+
 
 // GET individual player
 router.get('/:id', async (req, res) => {

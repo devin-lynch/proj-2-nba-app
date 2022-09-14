@@ -36,6 +36,7 @@ PLAYERS_TEAMS MODEL
 player_id: INT
 team_id: INT
 
+sequelize model:create --name player_team --attributes player_id:integer,team_id:integer
 
 COMMENTS MODEL
 -------------------
@@ -43,7 +44,11 @@ description: STRING
 user_id: INT
 player_id: INT
 
+sequelize model:create --name comment --attributes description:string,user_id:integer,player_id:integer
+
 
 FAVORITE PLAYER MODEL
 --------------------------
 player_id: INT
+
+sequelize model:create --name favorite --attributes player_id:integer

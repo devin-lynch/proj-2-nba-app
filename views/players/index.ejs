@@ -1,0 +1,9 @@
+
+<% players.forEach(player => { %>
+    <div>
+        <h2>Name: <%= player.first_name %> <%= player.last_name %></h2>
+        <p>ID: <%= player.id %></p>
+        </br>
+        <a href = '/players/<%= player.id %>'>Details</a>
+    </div>    
+<% }) %>
