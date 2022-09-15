@@ -1,5 +1,5 @@
 # NBA APP
-I will be creating an NBA app. Users will have unique logins with authorization processes in place for security. Users will be able to search for players/teams and save favorite players to their account. Add comments to your favorite players (perhaps you'd like to predict a potential MVP or breakout player). Find details about players and teams to learn more about the game of basketball within the NBA API!
+I will be creating an NBA app. Users will have unique logins with authorization processes in place for security. Users will be able to search for players/teams and save favorite players to their account. Add comments to your favorite players (perhaps you'd like to predict a potential MVP/breakout player or post a fond memory of said player). Find details about players and teams to learn more about the game of basketball within the NBA API!
 
 ---
 
