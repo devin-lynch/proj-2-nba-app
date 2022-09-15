@@ -20,6 +20,10 @@ router.get('/', async (req, res) => {
     }
 })
 
+// router.get('/', (req, res) => {
+//     res.render('players/index.ejs')
+// })
+
 // POSTS SEARCH RESULTS
 router.post('/results', async (req, res) => {
     try{
