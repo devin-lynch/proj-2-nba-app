@@ -109,28 +109,18 @@ router.get('/profile', (req, res) => {
     }
 })
 
-router.get('/profile/favorites', (req, res) => {
+
+// maybe need to add the [include: db]?
+router.get('/profile/favorites', async (req, res) => {
     try {
-        res.render('users/favorites.ejs')
+        const favPlayers = await db.users_players.findAll({})
+        res.render('users/favorites.ejs', { players: favPlayers })
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
     }
 })
 
-router.post('/:id', async (req, res) => {
-    try {
-        const newComment = await db.comment.create({
-            description: req.body.description,
-            userId: res.locals.user.id
-        })
-        newComment // need to attach player and user to comment
-        console.log(comment)
-        res.redirect('/users/profile/favorites')
-    } catch(err) {
-        console.warn(err)
-        res.send(`Server Error!`)
-    }
-})
+
 
 module.exports = router

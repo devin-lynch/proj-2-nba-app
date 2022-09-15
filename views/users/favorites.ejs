@@ -1,12 +1,12 @@
 <h2>Favorited Players</h2>
-<!-- 
-<%// favPlayers.forEach(favPlayer => { %>
+
+<% players.forEach(player => { %>
     <div>
-        <a href='/players/<%=// player.id %>'><h3><%=// player.first_name %> <%=// player.last_name %></h3></a>
+        <a href='/players/<%= player.id %>'><h3><%= player.first_name %> <%= player.last_name %></h3></a>
         </br>
 
-        // <p><%=// comment %></p>
+         <!-- <p><%=// comment %></p> -->
 
         
     </div>
-<%// }) %> -->
+<% }) %>

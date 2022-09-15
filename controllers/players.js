@@ -80,20 +80,20 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.post('/:id', async (req, res) => {
-    try {
-        const newComment = await db.comment.create({
-            description: req.body.description,
-            userId: res.locals.user.id
-        })
-        // need to attach player and user to comment
-        console.log(comment)
-        res.redirect('/users/profile/favorites')
-    } catch(err) {
-        console.warn(err)
-        res.send(`Server Error!`)
-    }
-})
+// router.post('/:id', async (req, res) => {
+//     try {
+//         const newComment = await db.comment.create({
+//             description: req.body.description,
+//             userId: res.locals.user.id
+//         })
+//         // need to attach player and user to comment
+//         console.log(comment)
+//         res.redirect('/users/profile/favorites')
+//     } catch(err) {
+//         console.warn(err)
+//         res.send(`Server Error!`)
+//     }
+// })
 
 
 
