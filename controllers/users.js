@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
+const { response } = require('express')
 
 // GET /users/new -- render a form to create a new user
 router.get('/new', (req, res) => {
@@ -111,6 +112,19 @@ router.get('/profile', (req, res) => {
 router.get('/profile/favorites', (req, res) => {
     try {
         res.render('users/favorites.ejs')
+    } catch(err) {
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
+
+router.post('/profile/favorites', async (req, res) => {
+    try {
+        const newComment = await db.comment.create({
+            description: req.body.description
+        })
+        console.log(comment)
+        res.redirect('/users/profile/favorites')
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)

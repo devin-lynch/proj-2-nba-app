@@ -1,7 +1,7 @@
 TODO:
 1. Add a username to the user model that will be a required field when creating an account
 2. Complete team ejs files to see all teams and then display details of a specific team
-3. Get favorite button working to add player to user profiles
+3. Get favorite button working to add player to user profiles (users_players)
 4. Figure out comment system on favorited players
 
 
@@ -22,6 +22,7 @@ sequelize model:create --name user --attributes email:string,password:string
 
 PLAYER MODEL
 -----------------
+player_id: INT (the id from the api)
 first_name: STRING
 last_name: STRING
 position: STRING
@@ -49,15 +50,15 @@ sequelize model:create --name team --attributes city:string,conference:string,di
 COMMENTS MODEL
 -------------------
 description: STRING
-user_id: INT
-player_id: INT
+userId: INT
+playerId: INT
 
 sequelize model:create --name comment --attributes description:string,userId:integer,playerId:integer
 
 
 
 
-USERS PLAYERS MODEL
+USERS PLAYERS MODEL (favorites on user profile)
 ----------------------
 playerId: INT
 userId: INT
