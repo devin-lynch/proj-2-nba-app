@@ -59,6 +59,43 @@ router.get('/:id', async (req, res) => {
 })
 
 
+//POST fav player to db (users_players)
+router.post('/', async (req, res) => {
+    try {
+        console.log('HERE!!!!!', req.body)
+        //findOrCreate the player in the db
+        const [player] = await db.player.findOrCreate({
+            where: {
+                first_name: req.body.first_name,
+                last_name: req.body.last_name
+            }
+        })
+        //add the currently logged in user to the player we just found or created (res.locals.user)
+        await res.locals.user.addPlayer(player)
+        console.log('RIGHT HERE RIGHT HERE!!!', player,)
+        res.redirect('/users/profile/favorites')
+    } catch(err) {
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
+
+router.post('/:id', async (req, res) => {
+    try {
+        const newComment = await db.comment.create({
+            description: req.body.description,
+            userId: res.locals.user.id
+        })
+        // need to attach player and user to comment
+        console.log(comment)
+        res.redirect('/users/profile/favorites')
+    } catch(err) {
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
+
+
 
 
 

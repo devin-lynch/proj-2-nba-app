@@ -26,7 +26,15 @@
 </ul>
 
 <!-- button not functional -- will allow user to add player to profile as a favorite. They will then be able to comment on the player from their favorites section -->
-<a href="/users/profile/favorites"><button>Add <%= player.first_name %> <%= player.last_name %> to Favorites</button></a> 
+
+
+<form action="/players" method="POST">
+    <input hidden value="<%= player.first_name %>" name="first_name">
+    <input hidden value="<%= player.last_name %>" name="last_name">
+
+    <input type="submit" value="Add to Profile">
+</form>
+
 </br>
 <a href="/players">Back</a>
 

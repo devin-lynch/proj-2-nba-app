@@ -118,11 +118,13 @@ router.get('/profile/favorites', (req, res) => {
     }
 })
 
-router.post('/profile/favorites', async (req, res) => {
+router.post('/:id', async (req, res) => {
     try {
         const newComment = await db.comment.create({
-            description: req.body.description
+            description: req.body.description,
+            userId: res.locals.user.id
         })
+        newComment // need to attach player and user to comment
         console.log(comment)
         res.redirect('/users/profile/favorites')
     } catch(err) {
