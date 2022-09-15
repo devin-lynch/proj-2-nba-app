@@ -1,3 +1,16 @@
+TODO:
+1. Add a username to the user model that will be a required field when creating an account
+2. Complete team ejs files to see all teams and then display details of a specific team
+3. Get favorite button working to add player to user profiles
+4. Figure out comment system on favorited players
+
+
+
+
+
+
+
+
 USER MODEL
 --------------
 email: VARCHAR 255 (string)
