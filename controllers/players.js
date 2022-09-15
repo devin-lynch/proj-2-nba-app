@@ -3,26 +3,16 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
-// GET players
-// router.get('/', async (req, res) => {
-//     try {
-//         const players = await db.player.findAll({})
-//             res.render('players/index.ejs', { players: players } )
-//         } catch(err) {
-//         console.warn(err)
-//         res.send(`Server Error!`)
-//     }
-// })
 
 router.get('/', async (req, res) => {
     try {
         let playersUrl = `https://www.balldontlie.io/api/v1/players`
         axios.get(playersUrl)
             .then(response => {
-                let players = response.data
+                let players = response.data.data
                 console.log(players)
-                res.json(players)
-                // res.render('players/index.ejs', { players: players })
+                // res.json(players)
+                res.render('players/index.ejs', { players: players })
             })
         } catch(err) {
         console.warn(err)
@@ -30,9 +20,20 @@ router.get('/', async (req, res) => {
     }
 })
 
-
-
-
+// POSTS SEARCH RESULTS
+router.post('/results', async (req, res) => {
+    try{
+        let playerUrl = `https://www.balldontlie.io/api/v1/players/?search=${req.body.first_name}`
+        const response = await axios.get(playerUrl)
+        const playerData = response.data.data
+        console.log('RIIIIIIIIIIIIIIIIGHT HEEEEEEEERE', playerData)
+        // res.json(playerData)
+        res.render('players/results.ejs', { players: playerData })
+    } catch(err) {
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
 
 // GET individual player
 router.get('/:id', async (req, res) => {
@@ -52,6 +53,9 @@ router.get('/:id', async (req, res) => {
         res.send(`Server Error!`)
     }
 })
+
+
+
 
 
 
