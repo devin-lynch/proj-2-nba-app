@@ -113,8 +113,11 @@ router.get('/profile', (req, res) => {
 // maybe need to add the [include: db]?
 router.get('/profile/favorites', async (req, res) => {
     try {
-        const favPlayers = await db.users_players.findAll({})
-        res.render('users/favorites.ejs', { players: favPlayers })
+        const favPlayers = await db.user.findAll({
+            include: [db.player]
+        })
+        console.log('HERE IS THE CONSOLE LOG!!!!!', favPlayers)
+        res.render('users/favorites.ejs', { players: favPlayers})
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
