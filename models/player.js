@@ -11,15 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.player.belongsToMany(models.user, { through: 'users_players' })
+      models.player.hasMany(models.comment)
+      models.player.belongsTo(models.team) 
     }
   }
   player.init({
+    player_id: DataTypes.INTEGER,
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     position: DataTypes.STRING,
     height_feet: DataTypes.INTEGER,
     height_inches: DataTypes.INTEGER,
-    team_id: DataTypes.INTEGER
+    teamId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'player',

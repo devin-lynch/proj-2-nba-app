@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      player_id: {
+        type: Sequelize.INTEGER
+      },
       first_name: {
         type: Sequelize.STRING
       },
@@ -23,7 +26,7 @@ module.exports = {
       height_inches: {
         type: Sequelize.INTEGER
       },
-      team_id: {
+      teamId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

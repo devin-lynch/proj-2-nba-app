@@ -16,7 +16,7 @@ height_feet: INT
 height_inches: INT
 team_id: INT
 
-sequelize model:create --name player --attributes first_name:string,last_name:string,position:string,height_feet:integer,height_inches:integer,team_id:integer
+sequelize model:create --name player --attributes player_id:integer,first_name:string,last_name:string,position:string,height_feet:integer,height_inches:integer,teamId:integer
 
 
 TEAM MODEL
@@ -31,12 +31,7 @@ abbreviation: STRING
 sequelize model:create --name team --attributes city:string,conference:string,division:string,name:string,full_name:string,abbreviation:string
 
 
-PLAYERS_TEAMS MODEL
------------------------
-player_id: INT
-team_id: INT
 
-sequelize model:create --name player_team --attributes player_id:integer,team_id:integer
 
 COMMENTS MODEL
 -------------------
@@ -44,11 +39,14 @@ description: STRING
 user_id: INT
 player_id: INT
 
-sequelize model:create --name comment --attributes description:string,user_id:integer,player_id:integer
+sequelize model:create --name comment --attributes description:string,userId:integer,playerId:integer
 
 
-FAVORITE PLAYER MODEL
---------------------------
-player_id: INT
 
-sequelize model:create --name favorite --attributes player_id:integer
+
+USERS PLAYERS MODEL
+----------------------
+playerId: INT
+userId: INT
+
+sequelize model:create --name users_players --attributes playerId:integer,userId:integer

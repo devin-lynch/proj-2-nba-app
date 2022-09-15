@@ -11,10 +11,10 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER
       },
-      player_id: {
+      playerId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

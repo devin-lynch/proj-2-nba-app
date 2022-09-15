@@ -16,18 +16,21 @@ const db = require('../models')
 
 router.get('/', async (req, res) => {
     try {
-        let players = `https://www.balldontlie.io/api/v1/players`
-        axios.get(players)
+        let playersUrl = `https://www.balldontlie.io/api/v1/players`
+        axios.get(playersUrl)
             .then(response => {
-                let allPlayers = response.data
-                console.log(allPlayers)
-                res.json(allPlayers)
+                let players = response.data
+                console.log(players)
+                res.json(players)
+                // res.render('players/index.ejs', { players: players })
             })
         } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
     }
 })
+
+
 
 
 
