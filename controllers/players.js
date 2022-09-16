@@ -69,7 +69,8 @@ router.post('/', async (req, res) => {
             where: {
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
-                player_id: req.body.player_id
+                player_id: req.body.player_id,
+                teamId: req.body.teamId
             }
         })
         //add the currently logged in user to the player we just found or created (res.locals.user)

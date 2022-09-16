@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         const comment = await db.comment.findOrCreate({
             where: {
                 description: req.body.description,
-                userId: req.body.userId,
+                userId: res.locals.user,
                 playerId: req.body.playerId
             }
         })
