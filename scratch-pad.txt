@@ -1,9 +1,10 @@
 TODO:
 1. Add a username to the user model that will be a required field when creating an account
-2. Complete team ejs files to see all teams and then display details of a specific team
-3. Figure out comment system on favorited players
-4. Figure out conditional to hide 'add to favorites' if already a fav.
-5. Loop through teams api to efficiently add to local db
+2. Figure out conditional to hide 'add to favorites' if already a fav.
+3. Add put route to hit MVP (edit comments)
+4. Add delete route for comments
+5. Styling
+
 
 
 
