@@ -13,7 +13,8 @@
 <% } %>
 
     <li>
-        <p>Team: <%= player.team.full_name %></p>
+        <!-- need to fix route to go to the team rather than list of teams -->
+        <p>Team: <a href='/teams/<%= player.teamId %>'><%= player.team.full_name %></a></p>
     </li>
     
     <li>
