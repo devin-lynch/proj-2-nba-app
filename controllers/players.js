@@ -39,23 +39,40 @@ router.post('/results', async (req, res) => {
     }
 })
 
-// GET individual player
+// // GET individual player
+// router.get('/:id', async (req, res) => {
+//     try {
+//         let playerUrl = `https://www.balldontlie.io/api/v1/players/${req.params.id}`
+//         axios.get(playerUrl)
+//         // CAN'T MIX ASYNC/AWAIT WITH .THEN SYNTAX!
+//             .then(response => {
+//                 console.log('%%%%%REQ.PARAMS.ID%%%%%%%', req.params.id)
+//                 const comment = db.comment.findOne({
+//                     where: { playerId: req.params.id }
+//                 })
+//                 let player = response.data
+//                 console.log(player)
+                
+//                 // res.json(player)
+//                 res.render('players/show.ejs', { player: player, comment: comment })
+
+//             })
+//     } catch(err) {
+//         console.warn(err)
+//         res.send(`Server Error!`)
+//     }
+// })
+
 router.get('/:id', async (req, res) => {
     try {
         let playerUrl = `https://www.balldontlie.io/api/v1/players/${req.params.id}`
-        axios.get(playerUrl)
-            .then(response => {
-                console.log('%%%%%REQ.PARAMS.ID%%%%%%%', req.params.id)
-                const comment = db.comment.findOne({
-                    where: { playerId: req.params.id }
-                })
-                let player = response.data
-                console.log(player)
-                
-                // res.json(player)
-                res.render('players/show.ejs', { player: player, comment: comment })
-
-            })
+        const response = await axios.get(playerUrl)
+        let player = response.data
+        console.log(player)
+        const comment = await db.comment.findOne({
+            where: { playerId: req.params.id }
+        })
+        res.render('players/show.ejs', { player: player, comment: comment })
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
