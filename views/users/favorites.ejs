@@ -4,7 +4,8 @@
 <% players.forEach(player => { %>
     <div>
         <% player.players.forEach(playa => { %>
-            <a href='/players/<%= playa.id %>'><h3><%= playa.first_name %> <%= playa.last_name %></h3></a>
+            <a href='/players/<%= playa.player_id %>'><h3><%= playa.first_name %> <%= playa.last_name %></h3></a>
+           <% console.log(playa.id) %>
        <% }) %>
         </br>
 

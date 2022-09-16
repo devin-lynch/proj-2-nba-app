@@ -67,7 +67,8 @@ router.post('/', async (req, res) => {
         const [player] = await db.player.findOrCreate({
             where: {
                 first_name: req.body.first_name,
-                last_name: req.body.last_name
+                last_name: req.body.last_name,
+                player_id: req.body.player_id
             }
         })
         //add the currently logged in user to the player we just found or created (res.locals.user)

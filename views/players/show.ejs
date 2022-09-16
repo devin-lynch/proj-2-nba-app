@@ -23,6 +23,10 @@
     <li>
         <p>Division: <%= player.team.division %></p>
     </li>
+
+    <li >
+        <p >Player ID: <%= player.id %></p>
+    </li>
 </ul>
 
 
@@ -31,6 +35,7 @@
 <form action="/players" method="POST">
     <input hidden value="<%= player.first_name %>" name="first_name">
     <input hidden value="<%= player.last_name %>" name="last_name">
+    <input hidden value="<%= player.id %>" name="player_id">
 
     <input type="submit" value="Add to Profile">
 </form>
