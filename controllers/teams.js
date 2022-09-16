@@ -17,9 +17,10 @@ router.get('/', async (req, res) => {
         let teamsUrl = 'https://www.balldontlie.io/api/v1/teams'
         axios.get(teamsUrl)
             .then(response => {
-                let teams = response.data
+                let teams = response.data.data
                 console.log(teams)
-                res.json(teams)
+                // res.json(teams)
+                res.render('teams/index.ejs', { teams: teams })
             })
     } catch(err) {
         console.warn(err)

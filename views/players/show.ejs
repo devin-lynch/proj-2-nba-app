@@ -29,7 +29,10 @@
 
 <form action="/comments" method="POST">
     <!-- <label for="comment">Add Comment:</label> -->
-    <input type="text" id="comment" name="description">
+    <input type="text" id="comment" name="description" required>
+    <!-- <input hidden value="<%=// res.locals.user %>" name="userId"> -->
+    <!-- playerId needs to the the player PK not the api player id -->
+    <input hidden value="<%= player.id %>" name="playerId">
     <input type="submit" value="Add Comment"> 
 </form>
 </br>

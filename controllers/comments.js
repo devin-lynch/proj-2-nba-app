@@ -7,13 +7,14 @@ router.post('/', async (req, res) => {
     try {
         console.log('RIGHT HERE!!!!!!!!!', req.body)
         //findOrCreate the comment in the db
-        const [comment] = await db.comment.findOrCreate({
+        const comment = await db.comment.findOrCreate({
             where: {
                 description: req.body.description,
-                userId: res.locals.user,
+                userId: req.body.userId,
                 playerId: req.body.playerId
             }
         })
+        
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
