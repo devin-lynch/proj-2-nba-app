@@ -27,11 +27,13 @@
 </ul>
 
 
-<% if (comment) { %>
+<% if (comments) { %>
     <h4>Comments:</h4>
-    <% console.log('%%%%%%COMMENT%%%%%', comment) %>
+    <% console.log('%%%%%%COMMENT%%%%%', comments) %>
     <ul>
-        <li><%= comment.description %></li>
+        <% comments.forEach(comment => { %>
+            <li><%= comment.description %></li>
+        <% }) %>
     </ul>
 
 <% } %>

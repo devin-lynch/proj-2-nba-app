@@ -47,10 +47,10 @@ router.get('/:id', async (req, res) => {
         const response = await axios.get(playerUrl)
         let player = response.data
         console.log(player)
-        const comment = await db.comment.findOne({
+        const comment = await db.comment.findAll({
             where: { playerId: req.params.id }
         })
-        res.render('players/show.ejs', { player: player, comment: comment })
+        res.render('players/show.ejs', { player: player, comments: comment })
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)
