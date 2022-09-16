@@ -45,12 +45,15 @@ router.get('/:id', async (req, res) => {
         let playerUrl = `https://www.balldontlie.io/api/v1/players/${req.params.id}`
         axios.get(playerUrl)
             .then(response => {
-                const fav = db.users_players.findAll({})
+                console.log('%%%%%REQ.PARAMS.ID%%%%%%%', req.params.id)
+                const comment = db.comment.findOne({
+                    where: { playerId: req.params.id }
+                })
                 let player = response.data
                 console.log(player)
                 
                 // res.json(player)
-                res.render('players/show.ejs', { player: player, fav: fav })
+                res.render('players/show.ejs', { player: player, comment: comment })
 
             })
     } catch(err) {
