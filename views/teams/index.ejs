@@ -2,7 +2,7 @@
 
 <% teams.forEach(team => { %>
     <div>
-        <h2><%= team.full_name %> </h2>
+        <h2><a href='/teams/<%= team.id %>'><%= team.full_name %></a> </h2>
 
     </div>
 <% }) %>

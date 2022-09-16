@@ -36,7 +36,8 @@ router.get('/:id', async (req, res) => {
             .then(response => {
                 let team = response.data
                 console.log(team)
-                res.json(team)
+                // res.json(team)
+                res.render('teams/show.ejs', { team: team })
             })
     } catch(err) {
         console.warn(err)
