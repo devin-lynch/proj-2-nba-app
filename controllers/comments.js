@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
                 playerId: req.body.playerId
             }
         })
-        
+        res.redirect(`/players/${req.body.playerId}`)
     } catch(err) {
         console.warn(err)
         res.send(`Server Error!`)

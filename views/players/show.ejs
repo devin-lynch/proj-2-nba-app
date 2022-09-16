@@ -26,11 +26,15 @@
 
 </ul>
 
-<h4>Comments:</h4>
-<% console.log('%%%%%%COMMENT%%%%%', comment) %>
-<ul>
-    <li><%= comment.description %></li>
-</ul>
+
+<% if (comment) { %>
+    <h4>Comments:</h4>
+    <% console.log('%%%%%%COMMENT%%%%%', comment) %>
+    <ul>
+        <li><%= comment.description %></li>
+    </ul>
+
+<% } %>
 
 
 <form action="/comments" method="POST">
