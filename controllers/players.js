@@ -97,6 +97,17 @@ router.post('/', async (req, res) => {
 // })
 
 
+//DELETE route for players table
+router.delete('/:playerId', (req, res) => {
+    console.log(req.params.playerId)
+    db.player.destroy({
+        where: { id: req.params.playerId }
+    })
+        .then( () => {
+            res.redirect('/users/profile/favorites')
+        })
+})
+
 
 
 
