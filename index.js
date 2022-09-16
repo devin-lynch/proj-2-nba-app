@@ -30,7 +30,7 @@ app.use(async (req, res, next) => {
         const decryptedIdString = decryptedId.toString(crypto.enc.Utf8)
         // look up the user in the db
         const user = await db.user.findByPk(decryptedIdString, {
-            // include: [db.player, db.comment]
+            include: [db.player, db.comment]
         })
         // mount the user on the res.locals
         res.locals.user = user

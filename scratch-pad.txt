@@ -2,7 +2,7 @@ TODO:
 1. Add a username to the user model that will be a required field when creating an account
 2. Complete team ejs files to see all teams and then display details of a specific team
 3. Figure out comment system on favorited players
-4. Fav players are now in the db, need to figure out how to display on page. 
+4. Figure out conditional to hide 'add to favorites' if already a fav.
 
 
 
