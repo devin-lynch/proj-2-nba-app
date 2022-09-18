@@ -37,6 +37,7 @@ router.delete('/:id', (req, res) => {
 })
 
 // PUT edits comments
+// need to redirect to the player details by the player_id
 router.put('/:id', (req, res) => {
     db.comment.update({
         description: req.body.description
@@ -44,7 +45,7 @@ router.put('/:id', (req, res) => {
     {
         where: { id: req.params.id}
     })
-    res.redirect('/players')
+    res.redirect(`/users/profile/favorites`)
     // res.send('test')
 })
 
