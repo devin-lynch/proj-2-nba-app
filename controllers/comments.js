@@ -22,6 +22,16 @@ router.post('/', async (req, res) => {
     }
 })
 
+// DELETES COMMENT. need to fix redirect to stay on same page
+router.delete('/:id', (req, res) => {
+    console.log(req.params.id)
+    db.comment.destroy({
+        where: { id: req.params.id }
+    })
+    .then( () => {
+        res.redirect(`/players`)
+    })
+})
 
 
 
