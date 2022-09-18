@@ -26,11 +26,26 @@ router.post('/', async (req, res) => {
 router.delete('/:id', (req, res) => {
     console.log(req.params.id)
     db.comment.destroy({
-        where: { id: req.params.id }
+        where: {
+             id: req.params.id
+             
+         }
     })
     .then( () => {
         res.redirect(`/players`)
     })
+})
+
+router.put('/:id', (req, res) => {
+    db.comment.update({
+        userId: res.locals.user.id,
+        id: req.params.id,
+        description: req.body.description
+    },
+    {
+        where: { id: req.params.id}
+    })
+    res.redirect('/players')
 })
 
 
