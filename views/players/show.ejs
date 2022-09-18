@@ -33,6 +33,7 @@
     <ul>
         <% comments.forEach(comment => { %>
             <li><%= comment.description %></li>
+            <a href="/players/<%= player.id %>/<%= comment.id %>/edit"><button>Edit</button></a>
             <!-- NEED TO TEST THE DELETE FORM FOR COMMENTS -->
             <form action="/comments/<%= comment.id %>/?_method=DELETE" method="POST">
                 <input type="submit" value="Delete">

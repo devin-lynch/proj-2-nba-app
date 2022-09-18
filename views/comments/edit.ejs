@@ -1,5 +1,5 @@
 <h3>Edit Comment</h3>
-
+<% console.log(comment) %>
 <form method="POST" action="/comment/<%= comment.id %>/?_method=PUT">
     <input type="text" name="description">
     <input type="submit" value="Submit">

@@ -92,7 +92,23 @@ router.delete('/:playerId', (req, res) => {
         })
 })
 
+router.get('/:playerId/:id/edit', async (req, res) => {
+    try {
+        console.log('%%%%%%%% HEREEE %%%%%%%', req.params.playerId)
+        const comment = await db.comment.findAll({
+            where: {
+                playerId: req.params.playerId,
+                id: req.params.id
+            }
+        })
+        console.log('%%%%%% COMMENT %%%%%%%', req.params.id)
+        res.render('comments/edit.ejs', { comment: comment })
 
+    } catch(err) {
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
 
 
 
