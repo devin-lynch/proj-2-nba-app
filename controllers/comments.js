@@ -36,6 +36,7 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+// PUT edits comments
 router.put('/:id', (req, res) => {
     db.comment.update({
         userId: res.locals.user.id,

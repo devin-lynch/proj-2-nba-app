@@ -20,9 +20,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-// router.get('/', (req, res) => {
-//     res.render('players/index.ejs')
-// })
+
 
 // POSTS SEARCH RESULTS
 router.post('/results', async (req, res) => {
@@ -81,20 +79,6 @@ router.post('/', async (req, res) => {
     }
 })
 
-// router.post('/:id', async (req, res) => {
-//     try {
-//         const newComment = await db.comment.create({
-//             description: req.body.description,
-//             userId: res.locals.user.id
-//         })
-//         // need to attach player and user to comment
-//         console.log(comment)
-//         res.redirect('/users/profile/favorites')
-//     } catch(err) {
-//         console.warn(err)
-//         res.send(`Server Error!`)
-//     }
-// })
 
 
 //DELETE route for players table
