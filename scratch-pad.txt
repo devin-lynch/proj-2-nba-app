@@ -2,7 +2,7 @@ TODO:
 1. Add a username to the user model that will be a required field when creating an account
 2. Figure out conditional to hide 'add to favorites' if already a fav.
 3. Add put route to hit MVP (edit comments)
-4. Add delete route for comments
+4. Fix delete redirect to stay on same page
 5. Styling
 
 

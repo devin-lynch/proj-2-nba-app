@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
 // DELETES COMMENT. need to fix redirect to stay on same page
 router.delete('/:id', (req, res) => {
-    console.log(req.params.id)
+    console.log('%%%%%%%RIGHT HERE', req.body)
     db.comment.destroy({
         where: {
              id: req.params.id
@@ -32,7 +32,7 @@ router.delete('/:id', (req, res) => {
          }
     })
     .then( () => {
-        res.redirect(`/players`)
+        res.redirect(`/players/${req.body.player_id}`)
     })
 })
 
@@ -45,8 +45,19 @@ router.put('/:id', (req, res) => {
         where: { id: req.params.id}
     })
     res.redirect('/players')
+    // res.send('test')
 })
 
+router.get('/', async (req, res) => {
+    try{ 
+        const comments = await db.comment.findAll({})
+        console.log(comments)
+        res.render('comments/index.ejs', { comments: comments })
+    } catch(err){
+        console.warn(err)
+        res.send(`Server Error!`)
+    }
+})
 
 
 

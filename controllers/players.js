@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         axios.get(playersUrl)
             .then(response => {
                 let players = response.data.data
-                console.log(players)
+                // console.log(players)
                 // res.json(players)
                 res.render('players/index.ejs', { players: players })
             })
