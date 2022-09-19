@@ -1,9 +1,8 @@
 TODO:
-1. Conditional for position missing from api
-2. Figure out conditional to hide 'add to favorites' if already a fav.
-3. Styling (Bootstrap)
-4. Fix PUT redirect
-5. Conditional for position missing from api
+1. Figure out conditional to hide 'add to favorites' if already a fav.
+2. Styling (Bootstrap)
+3. Fix PUT redirect
+
 
 
 
