@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-// DELETES COMMENT. need to fix redirect to stay on same page
+// DELETES COMMENT.
 router.delete('/:id', (req, res) => {
     console.log('%%%%%%%RIGHT HERE', req.body)
     db.comment.destroy({
