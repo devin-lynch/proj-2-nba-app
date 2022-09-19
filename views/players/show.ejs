@@ -34,12 +34,12 @@
         <% comments.forEach(comment => { %>
             <li><%= comment.description %></li>
             <a href="/players/<%= player.id %>/<%= comment.id %>/edit" role="button" class="btn btn-outline-warning">Edit</a>
-            <!-- NEED TO TEST THE DELETE FORM FOR COMMENTS -->
+
             <form action="/comments/<%= comment.id %>/?_method=DELETE" method="POST">
                 <input hidden name="player_id" value="<%= player.id %>">
-                <!-- <input type="submit" value="Delete"> -->
                 <input type="button" class="btn btn-outline-danger" value="Delete">
             </form>    
+        </br>
         <% }) %>
     </ul>
 
@@ -47,12 +47,9 @@
 
 
 <form action="/comments" method="POST">
-    <!-- <label for="comment">Add Comment:</label> -->
     <input type="text" id="comment" name="description" required>
-    <!-- <input hidden value="<%=// res.locals.user %>" name="userId"> -->
-    <!-- playerId needs to the the player PK not the api player id -->
     <input hidden value="<%= player.id %>" name="playerId">
-    <input type="submit" value="Add Comment"> 
+    <input type="submit" class="btn btn-outline-success" value="Add Comment"> 
 </form>
 </br>
 
@@ -64,7 +61,7 @@
         <input hidden value="<%= player.id %>" name="player_id">
         <input hidden value="<%= player.team.id %>" name="teamId">
     
-        <input type="submit" value="Add to Favorites">
+        <input type="submit" class="btn btn-outline-primary" value="Add to Favorites">
     </form>
 <%// } %>
 
