@@ -1,8 +1,9 @@
 TODO:
-1. Add a username to the user model that will be a required field when creating an account
+1. Conditional for position missing from api
 2. Figure out conditional to hide 'add to favorites' if already a fav.
 3. Styling
 4. Fix PUT redirect
+5. Conditional for position missing from api
 
 
 
