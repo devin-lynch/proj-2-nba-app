@@ -45,9 +45,15 @@ router.put('/:id', (req, res) => {
     {
         where: { id: req.params.id}
     })
+    console.log('%%%%%%%%REQ.PARAMS', req.body)
     res.redirect(`/users/profile/favorites`)
+    // // below is going to the api player ID rather than the player_id from the db. 
+    // res.redirect(`/players/${req.params.id}`)
     // res.send('test')
 })
+
+
+
 
 router.get('/', async (req, res) => {
     try{ 

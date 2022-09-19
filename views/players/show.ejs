@@ -2,9 +2,11 @@
 <h2><%= player.first_name %> <%= player.last_name %></h2>
 
 <ul>
+<% if(player.position != "") { %>
     <li>
         <p>Position: <%= player.position %></p>
     </li>
+<% } %>    
 
 <% if (player.height_feet != null && player.height_inches != null) { %>
     <li>
