@@ -37,7 +37,6 @@ router.delete('/:id', (req, res) => {
 })
 
 // PUT edits comments
-// need to redirect to the player details by the player_id
 router.put('/:id', (req, res) => {
     db.comment.update({
         description: req.body.description
@@ -45,11 +44,12 @@ router.put('/:id', (req, res) => {
     {
         where: { id: req.params.id}
     })
-    console.log('%%%%%%%%REQ.PARAMS', req.body)
-    res.redirect(`/users/profile/favorites`)
-    // // below is going to the api player ID rather than the player_id from the db. 
-    // res.redirect(`/players/${req.params.id}`)
-    // res.send('test')
+    db.comment.findOne({
+        where: { id: req.params.id }
+    })
+    .then(comment => {
+        res.redirect(`/players/${comment.playerId}`)
+    })
 })
 
 

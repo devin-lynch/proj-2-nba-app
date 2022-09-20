@@ -1,7 +1,6 @@
 TODO:
 1. Figure out conditional to hide 'add to favorites' if already a fav.
 2. Styling (Bootstrap)
-3. Fix PUT redirect
 
 
 
