@@ -1,8 +1,8 @@
-<h1>NBA Teams</h1>
+<h1 class="text-center">NBA Teams</h1>
 
 <% teams.forEach(team => { %>
     <div>
-        <h2><a href='/teams/<%= team.id %>'><%= team.full_name %></a> </h2>
+        <h2 class="text-center"><a href='/teams/<%= team.id %>'><%= team.full_name %></a> </h2>
 
     </div>
 <% }) %>
