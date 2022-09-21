@@ -1,6 +1,3 @@
-<!-- <div class="containerImage" style="background-image: url('https://wallpaperaccess.com/full/1305370.jpg')"></div> -->
-
-
 <!-- DETAILS FOR AN INDIVIDUAL PLAYER BY ID SEARCH -->
 <h1><%= player.first_name %> <%= player.last_name %></h1>
 
@@ -56,11 +53,10 @@
 
             <form style="display: inline" action="/comments/<%= comment.id %>/?_method=DELETE" method="POST">
                 <input hidden name="player_id" value="<%= player.id %>">
-                <input type="button" class="btn btn-danger" value="Delete">
+                <input type="submit" class="btn btn-danger" value="Delete">
             </form>    
         </br>
         </br>
-        
         <% }) %>
     </ul>
 
@@ -69,12 +65,28 @@
 
 </br>
 
-<!-- need to figure out conditional to not show button if player already fav'd -->
-<%// if (// fav != null) { %>
-<%// } %>
 
-<!-- </br>
-<a href="/players">Back</a> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

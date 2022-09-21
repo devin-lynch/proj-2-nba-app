@@ -1,5 +1,5 @@
 TODO:
-1. Styling (Bootstrap)
+1. Bootstrap
 2. Update readme
 
 
