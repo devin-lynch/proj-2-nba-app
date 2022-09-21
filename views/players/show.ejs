@@ -31,6 +31,20 @@
 
 </ul>
 
+<form action="/players" method="POST">
+    <input hidden value="<%= player.first_name %>" name="first_name">
+    <input hidden value="<%= player.last_name %>" name="last_name">
+    <input hidden value="<%= player.id %>" name="player_id">
+    <input hidden value="<%= player.team.id %>" name="teamId">
+
+    <input type="submit" class="btn btn-dark" value="Add to Favorites">
+</form>
+</br>
+<form action="/comments" method="POST">
+    <input type="text" id="comment" name="description" required>
+    <input hidden value="<%= player.id %>" name="playerId">
+    <input type="submit" class="btn btn-success" value="Add Comment"> 
+</form>
 
 <% if (comments) { %>
     <h4>Comments:</h4>
@@ -51,23 +65,10 @@
 <% } %>
 
 
-<form action="/comments" method="POST">
-    <input type="text" id="comment" name="description" required>
-    <input hidden value="<%= player.id %>" name="playerId">
-    <input type="submit" class="btn btn-success" value="Add Comment"> 
-</form>
 </br>
 
 <!-- need to figure out conditional to not show button if player already fav'd -->
 <%// if (// fav != null) { %>
-    <form action="/players" method="POST">
-        <input hidden value="<%= player.first_name %>" name="first_name">
-        <input hidden value="<%= player.last_name %>" name="last_name">
-        <input hidden value="<%= player.id %>" name="player_id">
-        <input hidden value="<%= player.team.id %>" name="teamId">
-    
-        <input type="submit" class="btn btn-dark" value="Add to Favorites">
-    </form>
 <%// } %>
 
 <!-- </br>
