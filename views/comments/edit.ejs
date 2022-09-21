@@ -1,8 +1,10 @@
 <h3 class="text-center">Edit Comment</h3>
 <%// console.log(comment[0].dataValues.description) %>
 
-<form class="text-center" method="POST" action="/comments/<%= comment[0].dataValues.id %>/?_method=PUT">
-    <input type="text" name="description">
+<form class="text-center"  method="POST" action="/comments/<%= comment[0].dataValues.id %>/?_method=PUT">
+    <div class="mb-3">
+        <input type="text" class="form-control" name="description">
+    </div>
     <input type="submit" class="btn btn-outline-success" value="Submit">
     
 </form>

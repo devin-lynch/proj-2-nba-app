@@ -1,3 +1,6 @@
+<!-- <div class="containerImage" style="background-image: url('https://wallpaperaccess.com/full/1305370.jpg')"></div> -->
+
+
 <!-- DETAILS FOR AN INDIVIDUAL PLAYER BY ID SEARCH -->
 <h2><%= player.first_name %> <%= player.last_name %></h2>
 
@@ -31,7 +34,7 @@
 
 <% if (comments) { %>
     <h4>Comments:</h4>
-    <% console.log('%%%%%%COMMENT%%%%%', comments) %>
+    <%// console.log('%%%%%%COMMENT%%%%%', comments) %>
     <ul>
         <% comments.forEach(comment => { %>
             <li><%= comment.description %></li>

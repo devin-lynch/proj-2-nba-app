@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser')
 const db = require('./models')
 const crypto = require('crypto-js')
 const methodOverride = require('method-override')
-
+// const path = require('path')
 
 console.log('server secret:', process.env.ENC_SECRET)
 
@@ -19,6 +19,8 @@ app.use(ejsLayouts)
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(methodOverride('_method'))
+// test adding img to ejs pages
+app.use(express.static(__dirname + '/public'));
 // our customer auth middleware
 app.use(async (req, res, next) => {
     // console.log('hello from a middleware 👋')
