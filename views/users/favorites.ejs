@@ -4,11 +4,11 @@
 <% players.forEach(player => { %>
     <div class="text-center">
         <% player.players.forEach(playa => { %>
-            <a href='/players/<%= playa.player_id %>'><h1><%= playa.first_name %> <%= playa.last_name %></h1></a>
+            <a style="color: black" href='/players/<%= playa.player_id %>'><h1><%= playa.first_name %> <%= playa.last_name %></h1></a>
            <% console.log(playa.id) %>
 
         <form action="/players/<%= playa.id %>/?_method=DELETE" method="POST">
-            <input type="submit" class="btn btn-outline-danger" value="Delete from Favorites">
+            <input type="submit" class="btn btn-danger" value="Delete from Favorites">
         </form>
     </br>
 

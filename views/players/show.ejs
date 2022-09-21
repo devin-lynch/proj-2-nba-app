@@ -2,31 +2,31 @@
 
 
 <!-- DETAILS FOR AN INDIVIDUAL PLAYER BY ID SEARCH -->
-<h2><%= player.first_name %> <%= player.last_name %></h2>
+<h1><%= player.first_name %> <%= player.last_name %></h1>
 
 <ul>
 <% if(player.position != "") { %>
     <li>
-        <p>Position: <%= player.position %></p>
+        <h3>Position: <%= player.position %></h3>
     </li>
 <% } %>    
 
 <% if (player.height_feet != null && player.height_inches != null) { %>
     <li>
-        <p>Height: <%= player.height_feet %>'<%= player.height_inches %>''</p>
+        <h3>Height: <%= player.height_feet %>'<%= player.height_inches %>''</h3>
     </li>
 <% } %>
 
     <li>
-        <p>Team: <a href='/teams/<%= player.team.id %>'><%= player.team.full_name %></a></p>
+        <h3>Team: <a style="color: black" href='/teams/<%= player.team.id %>'><%= player.team.full_name %></a></h3>
     </li>
     
     <li>
-        <p>Conference: <%= player.team.conference %></p>
+        <h3>Conference: <%= player.team.conference %></h3>
     </li>
 
     <li>
-        <p>Division: <%= player.team.division %></p>
+        <h3>Division: <%= player.team.division %></h3>
     </li>
 
 </ul>
@@ -37,12 +37,12 @@
     <%// console.log('%%%%%%COMMENT%%%%%', comments) %>
     <ul>
         <% comments.forEach(comment => { %>
-            <li><%= comment.description %></li>
-            <a href="/players/<%= player.id %>/<%= comment.id %>/edit" role="button" class="btn btn-outline-warning">Edit</a>
+            <li><h4><%= comment.description %></h4></li>
+            <a href="/players/<%= player.id %>/<%= comment.id %>/edit" role="button" class="btn btn-warning">Edit</a>
 
             <form action="/comments/<%= comment.id %>/?_method=DELETE" method="POST">
                 <input hidden name="player_id" value="<%= player.id %>">
-                <input type="button" class="btn btn-outline-danger" value="Delete">
+                <input type="button" class="btn btn-danger" value="Delete">
             </form>    
         </br>
         <% }) %>
@@ -54,7 +54,7 @@
 <form action="/comments" method="POST">
     <input type="text" id="comment" name="description" required>
     <input hidden value="<%= player.id %>" name="playerId">
-    <input type="submit" class="btn btn-outline-success" value="Add Comment"> 
+    <input type="submit" class="btn btn-success" value="Add Comment"> 
 </form>
 </br>
 
@@ -66,7 +66,7 @@
         <input hidden value="<%= player.id %>" name="player_id">
         <input hidden value="<%= player.team.id %>" name="teamId">
     
-        <input type="submit" class="btn btn-outline-primary" value="Add to Favorites">
+        <input type="submit" class="btn btn-dark" value="Add to Favorites">
     </form>
 <%// } %>
 
