@@ -4,6 +4,10 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 ---
 
 
+## DEPLOYED LINK
+* [Deployment Link](https://nba-app-devin-lynch.koyeb.app/)
+
+
 ## TECHSTACK:
 * JavaScript
 * Node
