@@ -58,3 +58,12 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 
 ## RESOURCES:
 * [balldontlie API](https://www.balldontlie.io)
+
+---
+
+
+## POST-PROJECT REFLECTION
+* My initial plan was to use either the most recent completed season, or the upcoming season to base my project on. After digging deeper into the API, I found that there was no way to filter in this manner, and it included the entire history of players in the NBA.
+*  I pivoted to make my project more player/team detail oriented rather than stat oriented. A benefit to this change is that a fan of any era can use the app to revisit their favorite players and record their thoughts.
+* I learned how important the planning phase of the project was, and to expect the unexpected.
+* Styling has always been a weak area of mine, and while I didn't get it to visually match my vision, I certainly learned a lot of useful new ways to approach the styling aspect of an app.
