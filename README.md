@@ -4,8 +4,24 @@ I will be creating an NBA app. Users will have unique logins with authorization 
 ---
 
 
+## INSTALLATION INSTRUCTIONS
+* To run the NBA App on your local machine, first fork and clone this repository. Then follow these steps:
+* 1. In your terminal, navigate to the cloned repository. Run the command ```npm -install``` to install all of the required packages for the app.
+* 2. Touch a .env file to add your ENC_KEY into, which can be a random string. An example would be ```ENC_KEY='my super secret enc key'```
+* 3. Add ```.env``` and ```node_modules``` to your .gitignore file.
+* 4. You will need to create the database for this project and migrate the models to it. In your terminal, run the following two commands:
+```createdb express_auth_boilerplate``` 
+```sequelize db:migrate```
+* 5. You're all set! Just run the ```nodemon``` command in your cloned repository and navigate to ```localhost:3000``` in your browser. 
+
+
+---
+
+
 ## DEPLOYED LINK
 * [Deployment Link](https://nba-app-devin-lynch.koyeb.app/)
+
+---
 
 
 ## TECHSTACK:
